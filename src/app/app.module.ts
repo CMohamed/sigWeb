@@ -12,11 +12,13 @@ import { RegistrationComponent } from './registration/registration.component';
 import { DashbordComponent } from './dashbord/dashbord.component';
 import {UserService} from './services/user.service';
 import {HttpClientModule} from '@angular/common/http';
+import {HomeComponent} from './home/home.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashbord', component: DashbordComponent },
-  { path: 'registration', component: RegistrationComponent }
+  { path: 'registration', component: RegistrationComponent },
+  { path: 'home', component: HomeComponent }
 ];
 
 
@@ -25,7 +27,8 @@ const routes: Routes = [
     AppComponent,
     LoginComponent,
     RegistrationComponent,
-    DashbordComponent
+    DashbordComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

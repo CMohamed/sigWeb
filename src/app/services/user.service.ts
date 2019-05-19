@@ -21,6 +21,10 @@ export class UserService {
       '\' WHERE id=' + u.id ;
     return this.http.get(api + query);
   }
+  delet(user) {
+    const query = 'DELETE FROM utilisateur WHERE id=' + user.id;
+    return this.http.get(api + query);
+  }
   getUsers() {
     const query = 'select * from utilisateur';
     return this.http.get(api + query);
