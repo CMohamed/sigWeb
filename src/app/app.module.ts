@@ -14,12 +14,15 @@ import {UserService} from './services/user.service';
 import {HttpClientModule} from '@angular/common/http';
 import {HomeComponent} from './home/home.component';
 import { MapComponent } from './map/map.component';
+import {AngularOpenlayersModule} from 'ngx-openlayers';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashbord', component: DashbordComponent },
   { path: 'registration', component: RegistrationComponent },
-  { path: 'home', component: HomeComponent }
+  { path: 'home', component: HomeComponent },
+  { path: 'map', component: MapComponent }
+
 ];
 
 
@@ -39,7 +42,8 @@ const routes: Routes = [
     AppMaterialModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularOpenlayersModule
   ],
   providers: [
     UserService

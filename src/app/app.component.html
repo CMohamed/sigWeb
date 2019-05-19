@@ -1,8 +1,13 @@
-<mat-toolbar color="primary">
-  <h2>{{title}}</h2>
+<mat-toolbar class="header" color="primary">
+  <span>
+    <h2 class="title">{{title}}</h2>
+  </span>
 
+  <button mat-button routerLink="home" >Home</button>
   <button mat-button routerLink="dashbord" *ngIf="currentUser && currentUser.role === 'Admin' "> Dashbord </button>
   <button mat-button routerLink="registration"> Registration </button>
+  <button mat-button routerLink="map"> Map </button>
+
 
   <span class="spacer"></span>
   <div class="float-right">
@@ -14,7 +19,7 @@
 
 </mat-toolbar>
 
-<div style="border : 3px solid black">
+<div  style="border : 3px solid black;">
   <router-outlet></router-outlet>
 
 </div>
