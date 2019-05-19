@@ -4,7 +4,9 @@
   <button mat-button routerLink="dashbord" *ngIf="currentUser && currentUser.role === 'Admin' "> Dashbord </button>
   <button mat-button routerLink="registration"> Registration </button>
 
+  <span class="spacer"></span>
   <div class="float-right">
+    <button mat-button *ngIf="currentUser"> Bonjour {{currentUser.username}} </button>
     <button *ngIf="!currentUser" (click)="login()" mat-button routerLink="login"> Login </button>
     <button *ngIf="currentUser" (click)="logout()" mat-button routerLink="login"> Logout </button>
   </div>

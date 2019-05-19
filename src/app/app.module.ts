@@ -13,6 +13,7 @@ import { DashbordComponent } from './dashbord/dashbord.component';
 import {UserService} from './services/user.service';
 import {HttpClientModule} from '@angular/common/http';
 import {HomeComponent} from './home/home.component';
+import { MapComponent } from './map/map.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -28,7 +29,8 @@ const routes: Routes = [
     LoginComponent,
     RegistrationComponent,
     DashbordComponent,
-    HomeComponent
+    HomeComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
