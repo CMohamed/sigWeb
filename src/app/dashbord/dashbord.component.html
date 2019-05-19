@@ -1,0 +1,91 @@
+<div class="container">
+  <mat-card>
+
+
+    <button type="button" (click)="addUser()" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Ajouter un utilisateur</button>
+    <button type="button" (click)="updateUser()" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Modifier un utilisateur</button>
+
+  </mat-card>
+
+  <!--<button (click)="getUsers()">-->
+    <!--getUsers-->
+  <!--</button>-->
+
+  <div class="container-fluid">
+
+    <table class="table table-striped" *ngIf="allUsers">
+      <thead>
+      <tr>
+        <th>username</th>
+        <th>email</th>
+        <th>role</th>
+        <th>actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let u of allUsers">
+        <td>{{u.username}}</td>
+        <td>{{u.mail}}</td>
+        <td>{{u.role}}</td>
+        <td>
+          <button mat-stroked-button (click)="updateUser(u)"  data-toggle="modal" data-target="#myModal">modifier</button>
+          <button mat-stroked-button (click)="delet(u)">supprimer</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">{{mode}} d'un utilisateur</h4>
+      </div>
+      <div class="modal-body">
+
+
+        <mat-form-field class="example-full-width">
+          <input type="text" [(ngModel)]="user.username" placeholder="username" required matInput>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+          <input type="password" [(ngModel)]="user.pass" placeholder="password" required matInput>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+          <input type="text" [(ngModel)]="user.mail" placeholder="email" required matInput>
+        </mat-form-field>
+        <br>
+        <div class="example-full-width">
+          <select class="form-control" name="role" id="role" [(ngModel)]="user.role">
+            <option *ngFor="let r of Roles" [value]="r">{{r}}</option>
+          </select>
+          <!--<mat-label>Roles</mat-label>-->
+          <!--<mat-select>-->
+            <!--<mat-option style="z-index: 1000000" *ngFor="let r of Roles" [value]="r">-->
+              <!--{{r}}-->
+            <!--</mat-option>-->
+          <!--</mat-select>-->
+        </div>
+
+        <!--<mat-form-field class="example-full-width">-->
+          <!--<input type="text" [(ngModel)]="role" placeholder="role" required matInput>-->
+        <!--</mat-form-field>-->
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+        <button type="button" (click)="saveUser()" class="btn btn-primary" data-dismiss="modal">Enregistrer</button>
+      </div>
+    </div>
+
+  </div>
+</div>

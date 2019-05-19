@@ -1,0 +1,37 @@
+<!--<div class="example-container">-->
+  <!--<mat-form-field>-->
+    <!--<input [(ngModel)]="username" matInput placeholder="Enter your email"  required>-->
+  <!--</mat-form-field>-->
+
+  <!--<mat-form-field>-->
+    <!--<input [(ngModel)]="pass" matInput placeholder="Enter your password" type="password">-->
+    <!--<mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>-->
+  <!--</mat-form-field>-->
+<!--</div>-->
+<br>
+<br>
+<br>
+
+<div class="container">
+  <div>
+    <img src="../../assets/images/ehtp-logo-clr.png" class="img-fluid" alt="ehtp-logo made by senju" style="height: 100px;margin: auto; padding:auto"  >
+  </div>
+  <br>
+  <mat-card>
+    <div class="example-container centerH">
+
+        <mat-form-field class="example-full-width">
+          <input type="text" [(ngModel)]="username" placeholder="username" required matInput>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+          <input [type] = " (hide)?'password':'text' " [(ngModel)]="pass" placeholder="password" required matInput>
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </mat-form-field>
+      <button mat-flat-button color="accent" (click)="submit()" >Login</button>
+    </div>
+  </mat-card>
+
+
+
+</div>
