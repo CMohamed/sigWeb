@@ -1,12 +1,12 @@
 <mat-toolbar color="primary">
   <h2>{{title}}</h2>
 
-  <button mat-button routerLink="dashbord"> Dashbord </button>
+  <button mat-button routerLink="dashbord" *ngIf="currentUser && currentUser.role === 'Admin' "> Dashbord </button>
   <button mat-button routerLink="registration"> Registration </button>
 
   <div class="float-right">
-    <button *ngIf="!connected" (click)="login()" mat-button routerLink="login"> Login </button>
-    <button *ngIf="connected" (click)="logout()" mat-button routerLink="login"> Logout </button>
+    <button *ngIf="!currentUser" (click)="login()" mat-button routerLink="login"> Login </button>
+    <button *ngIf="currentUser" (click)="logout()" mat-button routerLink="login"> Logout </button>
   </div>
 
 

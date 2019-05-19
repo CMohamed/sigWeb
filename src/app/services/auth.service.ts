@@ -10,7 +10,7 @@ import {User} from '../utils/app-utils';
 export class AuthService {
 
   constructor(private http: HttpClient) { }
-  currentUser = new Rx.BehaviorSubject(new User());
+  currentUser = new Rx.BehaviorSubject(null);
 
   getCurrentUser() {
     return this.currentUser;

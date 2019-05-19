@@ -28,6 +28,7 @@ export class DashbordComponent implements OnInit {
 
   addUser() {
     this.mode = 'Ajouter';
+    this.user = new User();
   }
   updateUser(u) {
     this.mode = 'Modifier';

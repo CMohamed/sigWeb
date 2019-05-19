@@ -39,7 +39,9 @@ const routes: Routes = [
     FormsModule,
     HttpClientModule
   ],
-  providers: [UserService],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 
