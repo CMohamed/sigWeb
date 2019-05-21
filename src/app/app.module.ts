@@ -15,13 +15,15 @@ import {HttpClientModule} from '@angular/common/http';
 import {HomeComponent} from './home/home.component';
 import { MapComponent } from './map/map.component';
 import {AngularOpenlayersModule} from 'ngx-openlayers';
+import {CarteComponent} from './carte/carte.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashbord', component: DashbordComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'map', component: MapComponent }
+  { path: 'map', component: MapComponent },
+  { path: 'carte', component: CarteComponent }
 
 ];
 
@@ -33,7 +35,8 @@ const routes: Routes = [
     RegistrationComponent,
     DashbordComponent,
     HomeComponent,
-    MapComponent
+    MapComponent,
+    CarteComponent
   ],
   imports: [
     BrowserModule,
