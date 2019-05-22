@@ -2,6 +2,8 @@ import {AfterViewInit, Component, OnInit} from '@angular/core';
 
 import OlMap from 'ol/Map';
 import OlXYZ from 'ol/source/XYZ';
+import OlTile from 'ol/source/Tile';
+import OlTileWMS from 'ol/source/TileWMS';
 import OlTileLayer from 'ol/layer/Tile';
 import OlView from 'ol/View';
 
@@ -20,14 +22,25 @@ export class CarteComponent implements OnInit, AfterViewInit {
   layer: OlTileLayer;
   view: OlView;
 
+  couches = [];
+
   ngOnInit() {
     this.source = new OlXYZ({
       url: 'http://tile.osm.org/{z}/{x}/{y}.png'
     });
 
-    this.layer = new OlTileLayer({
+    this.couches[0] = new OlTileLayer({
       source: this.source
     });
+
+    this.couches[1] = new OlTileLayer({
+      source: new OlTileWMS({
+        url: 'http://localhost:8080/geoserver/EHTP/wms?',
+        params: {layers: 'EHTP:regions', tiled: true, transparence: true}
+      })
+    });
+
+    console.log(this.layer);
 
     this.view = new OlView({
       center: fromLonLat([6.661594, 50.433237]),
@@ -36,7 +49,7 @@ export class CarteComponent implements OnInit, AfterViewInit {
 
     this.map = new OlMap({
       target: 'map',
-      layers: [this.layer],
+      layers: this.couches,
       view: this.view
     });
   }
