@@ -1,3 +1,21 @@
 <div class="bordered">
   <div id="map" class="map"></div>
 </div>
+
+
+<div class="container">
+
+  <button (click)="togle(1)">
+    show/hide
+  </button>
+
+  <br>
+  <br>
+
+  <ng-container *ngFor="let layer of couches; let i = index">
+    <label for="{{i}}emecouche"> {{i}} couche </label>
+    <input type="checkbox" id="{{i}}emecouche" name="{{i}}eme couche"  (click)="togle(i)">
+    <br>
+  </ng-container>
+
+</div>
